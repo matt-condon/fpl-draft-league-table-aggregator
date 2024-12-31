@@ -1,0 +1,68 @@
+{
+  "Standings": [
+    {
+      "Rank": 1,
+      "EntryName": "Downswich",
+      "PlayerName": "Rishabh Jain",
+      "EventTotal": 57,
+      "StageTwoTotal": 0,
+      "Total": 911
+    },
+    {
+      "Rank": 2,
+      "EntryName": "Slot Machine",
+      "PlayerName": "Sam Keenan",
+      "EventTotal": 0,
+      "StageTwoTotal": 0,
+      "Total": 896
+    },
+    {
+      "Rank": 3,
+      "EntryName": "Livin' Saliba Loca",
+      "PlayerName": "Scott King",
+      "EventTotal": 0,
+      "StageTwoTotal": 0,
+      "Total": 855
+    },
+    {
+      "Rank": 4,
+      "EntryName": "Enzo Maor Uisce",
+      "PlayerName": "Neil Mac Dhonnagáin",
+      "EventTotal": 51,
+      "StageTwoTotal": 0,
+      "Total": 760
+    },
+    {
+      "Rank": 5,
+      "EntryName": "Marescitalopram",
+      "PlayerName": "Matt Condon",
+      "EventTotal": 0,
+      "StageTwoTotal": 0,
+      "Total": 755
+    },
+    {
+      "Rank": 6,
+      "EntryName": "Girl w/t PearlErling",
+      "PlayerName": "Emma Rea",
+      "EventTotal": 25,
+      "StageTwoTotal": 0,
+      "Total": 729
+    },
+    {
+      "Rank": 7,
+      "EntryName": "HaCunha Mateta",
+      "PlayerName": "Féilim Ó Brádaigh",
+      "EventTotal": 0,
+      "StageTwoTotal": 0,
+      "Total": 712
+    },
+    {
+      "Rank": 8,
+      "EntryName": "James Randolphini",
+      "PlayerName": "Dualta Beatty",
+      "EventTotal": 22,
+      "StageTwoTotal": 0,
+      "Total": 680
+    }
+  ]
+}

@@ -25,14 +25,19 @@ func main() {
 	fmt.Println("\nAggregated table:")
 	aggregatedTable.Display()
 
-	err := saveLeagueTableToJSON(aggregatedTable, "data/aggregated-league-table.json")
+	err := saveLeagueTableToJSON(*stageOneTable, "data/view/stage-one-league-table.json")
+	if err != nil {
+		fmt.Println("Error saving JSON:", err)
+	}
+
+	err = saveLeagueTableToJSON(aggregatedTable, "data/view/aggregated-league-table.json")
 	if err != nil {
 		fmt.Println("Error saving JSON:", err)
 	}
 }
 
 func getStageOneTable() *models.OrderedStandings {
-	jsonFilePath := "data/draft-stage-one-league-table-partial.json"
+	jsonFilePath := "data/draft-stage-one-league-table.json"
 
 	file, err := os.Open(jsonFilePath)
 	if err != nil {

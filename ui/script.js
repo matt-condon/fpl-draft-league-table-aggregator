@@ -1,5 +1,5 @@
 // Fetch the aggregated league table data from the JSON file
-fetch('../data/aggregated-league-table.json')
+fetch(filePath)
     .then(response => response.json())
     .then(data => {
         const tableBody = document.getElementById('leagueTable').getElementsByTagName('tbody')[0];
