@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Tidy Go modules
+go mod tidy
+
+# Format Go code
+gofmt -w .

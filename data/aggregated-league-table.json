@@ -1,0 +1,28 @@
+{
+  "Standings": [
+    {
+      "Rank": 2,
+      "EntryName": "Slot Machine",
+      "PlayerName": "Sam Keenan",
+      "EventTotal": 0,
+      "StageTwoTotal": 0,
+      "Total": 896
+    },
+    {
+      "Rank": 5,
+      "EntryName": "Marescitalopram",
+      "PlayerName": "Matt Condon",
+      "EventTotal": 0,
+      "StageTwoTotal": 0,
+      "Total": 755
+    },
+    {
+      "Rank": 7,
+      "EntryName": "HaCunha Mateta",
+      "PlayerName": "Féilim Ó Brádaigh",
+      "EventTotal": 100,
+      "StageTwoTotal": 0,
+      "Total": 712
+    }
+  ]
+}
