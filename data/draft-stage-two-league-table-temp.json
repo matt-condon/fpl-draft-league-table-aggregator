@@ -49,31 +49,49 @@
           "player_last_name": "Ó Brádaigh",
           "short_name": "FÓ",
           "waiver_pick": null
+      },
+      {
+          "entry_id": 738056,
+          "entry_name": "Livin' Saliba Loca",
+          "id": 746473,
+          "joined_time": "2024-12-31T16:55:43.846616Z",
+          "player_first_name": "Scott",
+          "player_last_name": "King",
+          "short_name": "SK1",
+          "waiver_pick": null
       }
   ],
   "standings": [
     {
         "event_total": 0,
-        "last_rank": 2,
+        "last_rank": 1,
         "league_entry": 726981,
-        "rank": 2,
-        "rank_sort": 2,
+        "rank": 1,
+        "rank_sort": 1,
         "total": 0
       },
       {
         "event_total": 0,
-        "last_rank": 4,
+        "last_rank": 1,
         "league_entry": 746301,
-        "rank": 5,
-        "rank_sort": 5,
+        "rank": 1,
+        "rank_sort": 1,
         "total": 0
       },
       {
         "event_total": 0,
         "last_rank": 7,
         "league_entry": 746307,
-        "rank": 7,
-        "rank_sort": 7,
+        "rank": 1,
+        "rank_sort": 1,
+        "total": 0
+      },
+      {
+        "event_total": 0,
+        "last_rank": 1,
+        "league_entry": 746473,
+        "rank": 1,
+        "rank_sort": 1,
         "total": 0
       }
   ]

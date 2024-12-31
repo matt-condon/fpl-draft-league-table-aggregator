@@ -14,7 +14,6 @@ func AggregateAndSort(standings1, standings2 models.OrderedStandings) models.Ord
 	// Iterate through the first slice and store the standings
 	for _, standing := range standings1.Standings {
 		aggregated[standing.PlayerName] = &models.OrderedStanding{
-			Rank:       standing.Rank,
 			EntryName:  standing.EntryName,
 			PlayerName: standing.PlayerName,
 			EventTotal: standing.EventTotal,
@@ -27,13 +26,11 @@ func AggregateAndSort(standings1, standings2 models.OrderedStandings) models.Ord
 		// If the player already exists, update the Total, else add a new entry
 		if entry, exists := aggregated[standing.PlayerName]; exists {
 			entry.Total += standing.Total
-			entry.Rank = standing.Rank
 			entry.EntryName = standing.EntryName
 			entry.EventTotal = standing.EventTotal
 		} else {
 			// Player is not in the first slice, so directly add the entry
 			aggregated[standing.PlayerName] = &models.OrderedStanding{
-				Rank:       standing.Rank,
 				EntryName:  standing.EntryName,
 				PlayerName: standing.PlayerName,
 				EventTotal: standing.EventTotal,
@@ -52,6 +49,11 @@ func AggregateAndSort(standings1, standings2 models.OrderedStandings) models.Ord
 	sort.Slice(result, func(i, j int) bool {
 		return result[i].Total > result[j].Total
 	})
+
+	// Assign ranks based on sorted order
+	for i := range result {
+		result[i].Rank = i + 1 // Rank starts from 1
+	}
 
 	// Return the sorted and aggregated standings
 	return models.OrderedStandings{Standings: result}
