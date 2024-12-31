@@ -7,14 +7,14 @@ import (
 	"log"
 	"os"
 
-	"github.com/matt-condon/fpl-draft-league-table-aggregator/core/features/draft"
+	"github.com/matt-condon/fpl-draft-league-table-aggregator/core/features"
 	"github.com/matt-condon/fpl-draft-league-table-aggregator/core/models"
 )
 
 func main() {
 	stageOneTable := getStageOneTable()
 	stageTwoTable := getStageTwoTable()
-	aggregatedTable := draft.AggregateAndSort(*stageOneTable, *stageTwoTable)
+	aggregatedTable := features.AggregateAndSort(*stageOneTable, *stageTwoTable)
 
 	fmt.Println("\nStage 1 table:")
 	stageOneTable.Display()
@@ -51,7 +51,7 @@ func getStageOneTable() *models.OrderedStandings {
 		log.Fatalf("Failed to unmarshal JSON: %v", err)
 	}
 
-	return draft.NewOrderedStandings(root.LeagueEntries, root.Standings)
+	return features.NewOrderedStandings(root.LeagueEntries, root.Standings)
 }
 
 func getStageTwoTable() *models.OrderedStandings {
@@ -74,7 +74,7 @@ func getStageTwoTable() *models.OrderedStandings {
 		log.Fatalf("Failed to unmarshal JSON: %v", err)
 	}
 
-	return draft.NewOrderedStandings(root.LeagueEntries, root.Standings)
+	return features.NewOrderedStandings(root.LeagueEntries, root.Standings)
 }
 
 func saveLeagueTableToJSON(data models.OrderedStandings, filename string) error {
