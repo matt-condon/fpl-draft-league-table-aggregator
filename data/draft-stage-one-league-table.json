@@ -1,0 +1,170 @@
+{
+  "league": {
+    "admin_entry": 138361,
+    "closed": true,
+    "draft_dt": "2024-08-13T20:15:00Z",
+    "draft_pick_time_limit": 30,
+    "draft_status": "post",
+    "draft_tz_show": "Europe/Dublin",
+    "id": 37893,
+    "ko_rounds": 0,
+    "make_code_public": false,
+    "max_entries": 10,
+    "min_entries": 8,
+    "name": "Draft Hard with a Vengeance",
+    "scoring": "c",
+    "start_event": 1,
+    "stop_event": 38,
+    "trades": "y",
+    "transaction_mode": "waivers",
+    "variety": "x"
+  },
+  "league_entries": [
+    {
+      "entry_id": 138361,
+      "entry_name": "Yorosaver Mainoo",
+      "id": 138964,
+      "joined_time": "2024-08-03T14:58:38.257467Z",
+      "player_first_name": "Sam",
+      "player_last_name": "Keenan",
+      "short_name": "SK",
+      "waiver_pick": 7
+    },
+    {
+      "entry_id": 146055,
+      "entry_name": "Enzo Maor Uisce",
+      "id": 146742,
+      "joined_time": "2024-08-04T13:27:03.415652Z",
+      "player_first_name": "Neil",
+      "player_last_name": "Mac Dhonnagáin",
+      "short_name": "NM",
+      "waiver_pick": 5
+    },
+    {
+      "entry_id": 146096,
+      "entry_name": "Marescitalopram",
+      "id": 146783,
+      "joined_time": "2024-08-04T13:33:02.143389Z",
+      "player_first_name": "Matt",
+      "player_last_name": "Condon",
+      "short_name": "MC",
+      "waiver_pick": 4
+    },
+    {
+      "entry_id": 146143,
+      "entry_name": "Stop! Heimir Time",
+      "id": 146830,
+      "joined_time": "2024-08-04T13:40:23.651728Z",
+      "player_first_name": "Scott",
+      "player_last_name": "King",
+      "short_name": "SK1",
+      "waiver_pick": 6
+    },
+    {
+      "entry_id": 153604,
+      "entry_name": "Empty Foden",
+      "id": 154386,
+      "joined_time": "2024-08-05T08:40:32.139511Z",
+      "player_first_name": "Féilim",
+      "player_last_name": "Ó Brádaigh",
+      "short_name": "FÓ",
+      "waiver_pick": 2
+    },
+    {
+      "entry_id": 232335,
+      "entry_name": "Girl w/t PearlErling",
+      "id": 233728,
+      "joined_time": "2024-08-10T11:28:25.207586Z",
+      "player_first_name": "Emma",
+      "player_last_name": "Rea",
+      "short_name": "ER",
+      "waiver_pick": 3
+    },
+    {
+      "entry_id": 312481,
+      "entry_name": "James Randolphini",
+      "id": 315121,
+      "joined_time": "2024-08-13T10:05:51.592990Z",
+      "player_first_name": "Dualta",
+      "player_last_name": "Beatty",
+      "short_name": "DB",
+      "waiver_pick": 1
+    },
+    {
+      "entry_id": 329065,
+      "entry_name": "Downswich",
+      "id": 331806,
+      "joined_time": "2024-08-13T18:30:31.562554Z",
+      "player_first_name": "Rishabh",
+      "player_last_name": "Jain",
+      "short_name": "RJ",
+      "waiver_pick": 8
+    }
+  ],
+  "standings": [
+    {
+      "event_total": 57,
+      "last_rank": 1,
+      "league_entry": 331806,
+      "rank": 1,
+      "rank_sort": 1,
+      "total": 911
+    },
+    {
+      "event_total": 53,
+      "last_rank": 2,
+      "league_entry": 138964,
+      "rank": 2,
+      "rank_sort": 2,
+      "total": 896
+    },
+    {
+      "event_total": 44,
+      "last_rank": 3,
+      "league_entry": 146830,
+      "rank": 3,
+      "rank_sort": 3,
+      "total": 855
+    },
+    {
+      "event_total": 51,
+      "last_rank": 5,
+      "league_entry": 146742,
+      "rank": 4,
+      "rank_sort": 4,
+      "total": 760
+    },
+    {
+      "event_total": 20,
+      "last_rank": 4,
+      "league_entry": 146783,
+      "rank": 5,
+      "rank_sort": 5,
+      "total": 755
+    },
+    {
+      "event_total": 25,
+      "last_rank": 6,
+      "league_entry": 233728,
+      "rank": 6,
+      "rank_sort": 6,
+      "total": 729
+    },
+    {
+      "event_total": 44,
+      "last_rank": 7,
+      "league_entry": 154386,
+      "rank": 7,
+      "rank_sort": 7,
+      "total": 712
+    },
+    {
+      "event_total": 22,
+      "last_rank": 8,
+      "league_entry": 315121,
+      "rank": 8,
+      "rank_sort": 8,
+      "total": 680
+    }
+  ]
+}
