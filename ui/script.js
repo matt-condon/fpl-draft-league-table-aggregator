@@ -1,0 +1,23 @@
+// Fetch the aggregated league table data from the JSON file
+fetch('../data/aggregated-league-table.json')
+    .then(response => response.json())
+    .then(data => {
+        const tableBody = document.getElementById('leagueTable').getElementsByTagName('tbody')[0];
+
+        data.Standings.forEach(entry => {
+            const row = document.createElement('tr');
+
+            // Add table cells
+            row.innerHTML = `
+                <td>${entry.Rank}</td>
+                <td>${entry.EntryName}</td>
+                <td>${entry.PlayerName}</td>
+                <td>${entry.EventTotal}</td>
+                <td>${entry.StageTwoTotal}</td>
+                <td>${entry.Total}</td>
+            `;
+
+            tableBody.appendChild(row);
+        });
+    })
+    .catch(error => console.error('Error fetching league table data:', error));
