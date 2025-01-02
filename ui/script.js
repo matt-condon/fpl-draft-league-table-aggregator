@@ -10,7 +10,9 @@ fetch(filePath)
             // Add table cells
             row.innerHTML = `
                 <td>${entry.Rank}</td>
-                <td>${entry.EntryName}</td>
+                <td>
+                    <a href="${entry.TeamUrl}">${entry.EntryName}</a>
+                </td>
                 <td>${entry.PlayerName}</td>
                 <td>${entry.EventTotal}</td>
                 <td>${entry.StageTwoTotal}</td>
@@ -19,5 +21,8 @@ fetch(filePath)
 
             tableBody.appendChild(row);
         });
+
+        const eventElement = document.getElementById('event');
+        eventElement.textContent = `[${data.Event}]`;
     })
     .catch(error => console.error('Error fetching league table data:', error));

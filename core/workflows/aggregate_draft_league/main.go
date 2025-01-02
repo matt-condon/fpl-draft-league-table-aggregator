@@ -7,14 +7,19 @@ import (
 	"log"
 	"os"
 
+	"github.com/matt-condon/fpl-draft-league-table-aggregator/client"
 	"github.com/matt-condon/fpl-draft-league-table-aggregator/core/features"
 	"github.com/matt-condon/fpl-draft-league-table-aggregator/core/models"
 )
 
 func main() {
+	eventStatus := getEventStatus()
+	currentEvent := eventStatus.Status[0].Event
+
 	stageOneTable := getStageOneTable()
-	stageTwoTable := getStageTwoTable()
-	aggregatedTable := features.AggregateAndSort(*stageOneTable, *stageTwoTable)
+	stageTwoTable := getStageTwoTable(eventStatus.Status[0].Event)
+
+	aggregatedTable := features.AggregateAndSort(*stageOneTable, *stageTwoTable, currentEvent)
 
 	fmt.Println("\nStage 1 table:")
 	stageOneTable.Display()
@@ -34,6 +39,17 @@ func main() {
 	if err != nil {
 		fmt.Println("Error saving JSON:", err)
 	}
+}
+
+func getEventStatus() *models.EventStatusResponse {
+	c := client.NewClient(nil)
+	eventStatus, err := c.GetEventStatus()
+
+	if err != nil {
+		fmt.Printf(err.Error())
+		os.Exit(1)
+	}
+	return eventStatus
 }
 
 func getStageOneTable() *models.OrderedStandings {
@@ -56,10 +72,11 @@ func getStageOneTable() *models.OrderedStandings {
 		log.Fatalf("Failed to unmarshal JSON: %v", err)
 	}
 
-	return features.NewOrderedStandings(root.LeagueEntries, root.Standings)
+	staticFinalGw := 19
+	return features.NewOrderedStandings(root.LeagueEntries, root.Standings, staticFinalGw)
 }
 
-func getStageTwoTable() *models.OrderedStandings {
+func getStageTwoTable(eventID int) *models.OrderedStandings {
 	jsonFilePath := "data/draft-stage-two-league-table-temp.json"
 
 	file, err := os.Open(jsonFilePath)
@@ -79,7 +96,7 @@ func getStageTwoTable() *models.OrderedStandings {
 		log.Fatalf("Failed to unmarshal JSON: %v", err)
 	}
 
-	return features.NewOrderedStandings(root.LeagueEntries, root.Standings)
+	return features.NewOrderedStandings(root.LeagueEntries, root.Standings, eventID)
 }
 
 func saveLeagueTableToJSON(data models.OrderedStandings, filename string) error {
