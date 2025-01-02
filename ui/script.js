@@ -12,8 +12,8 @@ fetch(filePath)
                 <td>${entry.Rank}</td>
                 <td>
                     <a href="${entry.TeamUrl}">${entry.EntryName}</a>
+                    <div>${entry.PlayerName}</div>
                 </td>
-                <td>${entry.PlayerName}</td>
                 <td>${entry.EventTotal}</td>
                 <td>${entry.StageTwoTotal}</td>
                 <td>${entry.Total}</td>
