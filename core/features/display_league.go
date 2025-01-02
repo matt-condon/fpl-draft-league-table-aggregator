@@ -7,8 +7,12 @@ import (
 	"github.com/matt-condon/fpl-draft-league-table-aggregator/core/models"
 )
 
+const (
+	teamUrlTemplate = "https://draft.premierleague.com/entry/%d/event/%d"
+)
+
 // NewOrderedStandings creates an OrderedStandings object from league entries and standings
-func NewOrderedStandings(entries []models.LeagueEntry, standings []models.Standing) *models.OrderedStandings {
+func NewOrderedStandings(entries []models.LeagueEntry, standings []models.Standing, eventId int) *models.OrderedStandings {
 	// Create a map for quick lookup of LeagueEntry by ID
 	entryMap := make(map[int]models.LeagueEntry)
 	for _, entry := range entries {
@@ -26,6 +30,7 @@ func NewOrderedStandings(entries []models.LeagueEntry, standings []models.Standi
 		orderedStandings = append(orderedStandings, models.OrderedStanding{
 			Rank:       standing.Rank,
 			EntryName:  entry.EntryName,
+			TeamUrl:    fmt.Sprintf(teamUrlTemplate, entry.EntryID, eventId),
 			PlayerName: entry.PlayerFirstName + " " + entry.PlayerLastName,
 			EventTotal: standing.EventTotal,
 			Total:      standing.Total,
@@ -37,5 +42,5 @@ func NewOrderedStandings(entries []models.LeagueEntry, standings []models.Standi
 		return orderedStandings[i].Rank < orderedStandings[j].Rank
 	})
 
-	return &models.OrderedStandings{Standings: orderedStandings}
+	return &models.OrderedStandings{Standings: orderedStandings, Event: eventId}
 }

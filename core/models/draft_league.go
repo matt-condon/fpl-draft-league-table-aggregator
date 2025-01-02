@@ -60,6 +60,7 @@ type Standing struct {
 type OrderedStanding struct {
 	Rank          int
 	EntryName     string
+	TeamUrl       string
 	PlayerName    string
 	EventTotal    int
 	StageTwoTotal int
@@ -69,6 +70,7 @@ type OrderedStanding struct {
 // OrderedStandings contains a slice of OrderedStanding and methods to manipulate or display them
 type OrderedStandings struct {
 	Standings []OrderedStanding
+	Event     int
 }
 
 // Display outputs the standings in a formatted table

@@ -7,7 +7,7 @@ import (
 )
 
 // Aggregate and sort the standings based on PlayerName
-func AggregateAndSort(standings1, standings2 models.OrderedStandings) models.OrderedStandings {
+func AggregateAndSort(standings1, standings2 models.OrderedStandings, eventID int) models.OrderedStandings {
 	// Map to aggregate totals by PlayerName
 	aggregated := make(map[string]*models.OrderedStanding)
 
@@ -16,6 +16,7 @@ func AggregateAndSort(standings1, standings2 models.OrderedStandings) models.Ord
 		aggregated[standing.PlayerName] = &models.OrderedStanding{
 			EntryName:  standing.EntryName,
 			PlayerName: standing.PlayerName,
+			TeamUrl:    standing.TeamUrl,
 			EventTotal: standing.EventTotal,
 			Total:      standing.Total,
 		}
@@ -27,12 +28,14 @@ func AggregateAndSort(standings1, standings2 models.OrderedStandings) models.Ord
 		if entry, exists := aggregated[standing.PlayerName]; exists {
 			entry.Total += standing.Total
 			entry.EntryName = standing.EntryName
+			entry.TeamUrl = standing.TeamUrl
 			entry.EventTotal = standing.EventTotal
 		} else {
 			// Player is not in the first slice, so directly add the entry
 			aggregated[standing.PlayerName] = &models.OrderedStanding{
 				EntryName:  standing.EntryName,
 				PlayerName: standing.PlayerName,
+				TeamUrl:    standing.TeamUrl,
 				EventTotal: standing.EventTotal,
 				Total:      standing.Total,
 			}
@@ -56,5 +59,5 @@ func AggregateAndSort(standings1, standings2 models.OrderedStandings) models.Ord
 	}
 
 	// Return the sorted and aggregated standings
-	return models.OrderedStandings{Standings: result}
+	return models.OrderedStandings{Standings: result, Event: eventID}
 }

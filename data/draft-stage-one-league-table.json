@@ -38,7 +38,7 @@
       "player_first_name": "Neil",
       "player_last_name": "Mac Dhonnagáin",
       "short_name": "NM",
-      "waiver_pick": 5
+      "waiver_pick": 4
     },
     {
       "entry_id": 146096,
@@ -48,7 +48,7 @@
       "player_first_name": "Matt",
       "player_last_name": "Condon",
       "short_name": "MC",
-      "waiver_pick": 4
+      "waiver_pick": 5
     },
     {
       "entry_id": 146143,
@@ -103,12 +103,12 @@
   ],
   "standings": [
     {
-      "event_total": 57,
+      "event_total": 59,
       "last_rank": 1,
       "league_entry": 331806,
       "rank": 1,
       "rank_sort": 1,
-      "total": 911
+      "total": 913
     },
     {
       "event_total": 53,
@@ -119,44 +119,44 @@
       "total": 896
     },
     {
-      "event_total": 44,
+      "event_total": 60,
       "last_rank": 3,
       "league_entry": 146830,
       "rank": 3,
       "rank_sort": 3,
-      "total": 855
+      "total": 871
     },
     {
-      "event_total": 51,
-      "last_rank": 5,
-      "league_entry": 146742,
-      "rank": 4,
-      "rank_sort": 4,
-      "total": 760
-    },
-    {
-      "event_total": 20,
+      "event_total": 36,
       "last_rank": 4,
       "league_entry": 146783,
-      "rank": 5,
-      "rank_sort": 5,
-      "total": 755
+      "rank": 4,
+      "rank_sort": 4,
+      "total": 771
     },
     {
-      "event_total": 25,
+      "event_total": 54,
+      "last_rank": 5,
+      "league_entry": 146742,
+      "rank": 5,
+      "rank_sort": 5,
+      "total": 763
+    },
+    {
+      "event_total": 28,
       "last_rank": 6,
       "league_entry": 233728,
       "rank": 6,
       "rank_sort": 6,
-      "total": 729
+      "total": 732
     },
     {
-      "event_total": 44,
+      "event_total": 57,
       "last_rank": 7,
       "league_entry": 154386,
       "rank": 7,
       "rank_sort": 7,
-      "total": 712
+      "total": 725
     },
     {
       "event_total": 22,
