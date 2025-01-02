@@ -8,7 +8,7 @@ const (
 	draftLeagueAddress = "https://draft.premierleague.com/api/league/"
 )
 
-func (c *Client) GetDraftLeague(leagueID string) (*models.League, error) {
+func (c *Client) GetDraftLeague(leagueID string) (*models.DraftRoot, error) {
 
 	url := draftLeagueAddress + leagueID + "/details"
 
@@ -17,12 +17,12 @@ func (c *Client) GetDraftLeague(leagueID string) (*models.League, error) {
 		return nil, err
 	}
 
-	league := &models.League{}
+	root := &models.DraftRoot{}
 
-	_, err = c.Do(request, &league)
+	_, err = c.Do(request, &root)
 	if err != nil {
 		return nil, err
 	}
 
-	return league, nil
+	return root, nil
 }

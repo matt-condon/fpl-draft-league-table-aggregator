@@ -3,18 +3,14 @@ package client
 import (
 	"bytes"
 	"encoding/json"
-	"fmt"
 	"net/http"
-	"os"
 
-	"github.com/joho/godotenv"
 	"github.com/matt-condon/fpl-draft-league-table-aggregator/core/models"
 )
 
 type Client struct {
 	httpClient *http.Client
 	UserAgent  string
-	Cookie     *http.Cookie
 }
 
 func (c *Client) NewRequest(method string, path string, body []byte) (*http.Request, error) {
@@ -26,7 +22,6 @@ func (c *Client) NewRequest(method string, path string, body []byte) (*http.Requ
 
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("User-Agent", c.UserAgent)
-	req.AddCookie(c.Cookie)
 
 	return req, nil
 }
@@ -62,23 +57,5 @@ func NewClient(httpClient *http.Client) *Client {
 		httpClient: httpClient,
 	}
 
-	loadSecrets()
-	profileSecret := os.Getenv("PL_PROFILE")
-	if profileSecret == "" {
-		fmt.Println("PL_PROFILE environment variable is not set.")
-	}
-
-	c.Cookie = &http.Cookie{
-		Name:  "pl_profile",
-		Value: profileSecret,
-	}
-
 	return c
-}
-
-func loadSecrets() {
-	err := godotenv.Load(".env")
-	if err != nil {
-		fmt.Println(err)
-	}
 }

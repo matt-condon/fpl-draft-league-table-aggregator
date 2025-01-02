@@ -13,17 +13,20 @@ import (
 )
 
 const (
-	stageOneJsonPath       = "data/view/stage-one-league-table.json"
-	aggregatedJsonPath     = "data/view/aggregated-league-table-%d.json"
-	aggregatedJsonPathLive = "data/view/aggregated-league-table-live.json"
+	stageOneStaticLeagueRootPath = "data/draft-stage-one-league-table.json"
+	stageOneJsonPath             = "data/view/stage-one-league-table.json"
+	aggregatedJsonPath           = "data/view/aggregated-league-table-%d.json"
+	aggregatedJsonPathLive       = "data/view/aggregated-league-table-live.json"
 )
 
 func main() {
-	eventStatus := getEventStatus()
+	c := client.NewClient(nil)
+
+	eventStatus := getEventStatus(c)
 	currentEvent := eventStatus.Status[0].Event
 
 	stageOneTable := getStageOneTable()
-	stageTwoTable := getStageTwoTable(eventStatus.Status[0].Event)
+	stageTwoTable := getStageTwoTable(c, eventStatus.Status[0].Event)
 
 	aggregatedTable := features.AggregateAndSort(*stageOneTable, *stageTwoTable, currentEvent)
 
@@ -52,8 +55,7 @@ func main() {
 	}
 }
 
-func getEventStatus() *models.EventStatusResponse {
-	c := client.NewClient(nil)
+func getEventStatus(c *client.Client) *models.EventStatusResponse {
 	eventStatus, err := c.GetEventStatus()
 
 	if err != nil {
@@ -64,9 +66,7 @@ func getEventStatus() *models.EventStatusResponse {
 }
 
 func getStageOneTable() *models.OrderedStandings {
-	jsonFilePath := "data/draft-stage-one-league-table.json"
-
-	file, err := os.Open(jsonFilePath)
+	file, err := os.Open(stageOneStaticLeagueRootPath)
 	if err != nil {
 		log.Fatalf("Failed to open JSON file: %v", err)
 	}
@@ -87,27 +87,15 @@ func getStageOneTable() *models.OrderedStandings {
 	return features.NewOrderedStandings(root.LeagueEntries, root.Standings, staticFinalGw)
 }
 
-func getStageTwoTable(eventID int) *models.OrderedStandings {
-	jsonFilePath := "data/draft-stage-two-league-table-temp.json"
+func getStageTwoTable(c *client.Client, eventID int) *models.OrderedStandings {
+	leagueRoot, err := c.GetDraftLeague("186651")
 
-	file, err := os.Open(jsonFilePath)
 	if err != nil {
-		log.Fatalf("Failed to open JSON file: %v", err)
-	}
-	defer file.Close()
-
-	bytes, err := io.ReadAll(file)
-	if err != nil {
-		log.Fatalf("Failed to read JSON file: %v", err)
+		fmt.Println("Error retrieving draft league", err)
+		os.Exit(1)
 	}
 
-	var root models.DraftRoot
-	err = json.Unmarshal(bytes, &root)
-	if err != nil {
-		log.Fatalf("Failed to unmarshal JSON: %v", err)
-	}
-
-	return features.NewOrderedStandings(root.LeagueEntries, root.Standings, eventID)
+	return features.NewOrderedStandings(leagueRoot.LeagueEntries, leagueRoot.Standings, eventID)
 }
 
 func saveLeagueTableToJSON(data models.OrderedStandings, filename string) error {
