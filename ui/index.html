@@ -4,51 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aggregated League Table</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-        th {
-            background-color: #f4f4f4;
-            text-align: left;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 
     <script>
-        const filePath = '../data/view/aggregated-league-table.json';
+        const filePath = '../data/view/aggregated-league-table-live.json';
     </script>
 </head>
 <body>
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-        <h1>Aggregated League Table <span id="event"></span></h1>
-        <a href="stage-1/index.html">stage 1 static table</a>
-    </div>
+    <div id="main-content"></div>
 
-    <table id="leagueTable">
-        <thead>
-            <tr>
-                <th>Rank</th>
-                <th>Entry Name</th>
-                <th>Player Name</th>
-                <th>Event Total</th>
-                <th>Stage 2 Total</th>
-                <th>Total</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Rows will be populated by JavaScript -->
-        </tbody>
-    </table>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                // Load the body content from the separate file
+                const response = await fetch('tables/live.html');
+                if (!response.ok) {
+                    throw new Error('Failed to load body content');
+                }
+                const bodyContent = await response.text();
+                document.getElementById('main-content').innerHTML = bodyContent;
 
-    <script src="script.js"></script>
+                // Load script.js after content is ready
+                const script = document.createElement('script');
+                script.src = 'script.js';
+                document.body.appendChild(script);
+            } catch (error) {
+                console.error('Error loading body content:', error);
+            }
+        });
+    </script>
 </body>
 </html>

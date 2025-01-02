@@ -12,6 +12,12 @@ import (
 	"github.com/matt-condon/fpl-draft-league-table-aggregator/core/models"
 )
 
+const (
+	stageOneJsonPath       = "data/view/stage-one-league-table.json"
+	aggregatedJsonPath     = "data/view/aggregated-league-table-%d.json"
+	aggregatedJsonPathLive = "data/view/aggregated-league-table-live.json"
+)
+
 func main() {
 	eventStatus := getEventStatus()
 	currentEvent := eventStatus.Status[0].Event
@@ -30,12 +36,17 @@ func main() {
 	fmt.Println("\nAggregated table:")
 	aggregatedTable.Display()
 
-	err := saveLeagueTableToJSON(*stageOneTable, "data/view/stage-one-league-table.json")
+	err := saveLeagueTableToJSON(*stageOneTable, stageOneJsonPath)
 	if err != nil {
 		fmt.Println("Error saving JSON:", err)
 	}
 
-	err = saveLeagueTableToJSON(aggregatedTable, "data/view/aggregated-league-table.json")
+	err = saveLeagueTableToJSON(aggregatedTable, fmt.Sprintf(aggregatedJsonPath, currentEvent))
+	if err != nil {
+		fmt.Println("Error saving JSON:", err)
+	}
+
+	err = saveLeagueTableToJSON(aggregatedTable, aggregatedJsonPathLive)
 	if err != nil {
 		fmt.Println("Error saving JSON:", err)
 	}
@@ -46,7 +57,7 @@ func getEventStatus() *models.EventStatusResponse {
 	eventStatus, err := c.GetEventStatus()
 
 	if err != nil {
-		fmt.Printf(err.Error())
+		fmt.Println("Error retrieving event status", err)
 		os.Exit(1)
 	}
 	return eventStatus
