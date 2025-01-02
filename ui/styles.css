@@ -1,3 +1,10 @@
+.logo {
+    height: 40px;
+    width: auto; 
+    margin-right: 10px;
+    display: inline-block;
+}
+
 /* Default (Light Mode) Styles */
 body {
     font-family: 'Arial', sans-serif;
