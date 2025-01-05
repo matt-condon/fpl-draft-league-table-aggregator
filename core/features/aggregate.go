@@ -26,10 +26,11 @@ func AggregateAndSort(standings1, standings2 models.OrderedStandings, eventID in
 	for _, standing := range standings2.Standings {
 		// If the player already exists, update the Total, else add a new entry
 		if entry, exists := aggregated[standing.PlayerName]; exists {
-			entry.Total += standing.Total
 			entry.EntryName = standing.EntryName
 			entry.TeamUrl = standing.TeamUrl
 			entry.EventTotal = standing.EventTotal
+			entry.StageTwoTotal = standing.Total
+			entry.Total += standing.Total
 		} else {
 			// Player is not in the first slice, so directly add the entry
 			aggregated[standing.PlayerName] = &models.OrderedStanding{
