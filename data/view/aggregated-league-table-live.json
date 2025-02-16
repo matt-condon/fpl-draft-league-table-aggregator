@@ -5,72 +5,72 @@
       "EntryName": "Downswich 2",
       "TeamUrl": "https://draft.premierleague.com/entry/739865/event/25",
       "PlayerName": "Rishabh Jain",
-      "EventTotal": 3,
-      "StageTwoTotal": 256,
-      "Total": 1169
+      "EventTotal": 24,
+      "StageTwoTotal": 277,
+      "Total": 1190
     },
     {
       "Rank": 2,
       "EntryName": "Slot Machine",
       "TeamUrl": "https://draft.premierleague.com/entry/718663/event/25",
       "PlayerName": "Sam Keenan",
-      "EventTotal": 2,
-      "StageTwoTotal": 245,
-      "Total": 1141
+      "EventTotal": 26,
+      "StageTwoTotal": 269,
+      "Total": 1165
     },
     {
       "Rank": 3,
       "EntryName": "Livin' Saliba Loca",
       "TeamUrl": "https://draft.premierleague.com/entry/738056/event/25",
       "PlayerName": "Scott King",
-      "EventTotal": 9,
-      "StageTwoTotal": 228,
-      "Total": 1099
+      "EventTotal": 40,
+      "StageTwoTotal": 259,
+      "Total": 1130
     },
     {
       "Rank": 4,
       "EntryName": "Savinho Blanc",
       "TeamUrl": "https://draft.premierleague.com/entry/737884/event/25",
       "PlayerName": "Matt Condon",
-      "EventTotal": 0,
-      "StageTwoTotal": 235,
-      "Total": 1006
+      "EventTotal": 22,
+      "StageTwoTotal": 257,
+      "Total": 1028
     },
     {
       "Rank": 5,
       "EntryName": "Girl w/t Erl Earing",
       "TeamUrl": "https://draft.premierleague.com/entry/739863/event/25",
       "PlayerName": "Emma Rea",
-      "EventTotal": 0,
-      "StageTwoTotal": 268,
-      "Total": 1000
+      "EventTotal": 27,
+      "StageTwoTotal": 295,
+      "Total": 1027
     },
     {
       "Rank": 6,
-      "EntryName": "Flekken the bean",
-      "TeamUrl": "https://draft.premierleague.com/entry/740016/event/25",
-      "PlayerName": "Neil Mac Dhonnagáin",
-      "EventTotal": 0,
-      "StageTwoTotal": 222,
-      "Total": 985
-    },
-    {
-      "Rank": 7,
       "EntryName": "Fool of a Shevski",
       "TeamUrl": "https://draft.premierleague.com/entry/737890/event/25",
       "PlayerName": "Féilim Ó Brádaigh",
-      "EventTotal": 0,
-      "StageTwoTotal": 253,
-      "Total": 978
+      "EventTotal": 31,
+      "StageTwoTotal": 284,
+      "Total": 1009
+    },
+    {
+      "Rank": 7,
+      "EntryName": "Flekken the bean",
+      "TeamUrl": "https://draft.premierleague.com/entry/740016/event/25",
+      "PlayerName": "Neil Mac Dhonnagáin",
+      "EventTotal": 18,
+      "StageTwoTotal": 240,
+      "Total": 1003
     },
     {
       "Rank": 8,
       "EntryName": "Luke Shawarma",
       "TeamUrl": "https://draft.premierleague.com/entry/739993/event/25",
       "PlayerName": "Dualta Beatty",
-      "EventTotal": 2,
-      "StageTwoTotal": 233,
-      "Total": 913
+      "EventTotal": 32,
+      "StageTwoTotal": 263,
+      "Total": 943
     }
   ],
   "Event": 25
