@@ -2,21 +2,21 @@
   "Standings": [
     {
       "Rank": 1,
+      "EntryName": "Slot Machine",
+      "TeamUrl": "https://draft.premierleague.com/entry/718663/event/28",
+      "PlayerName": "Sam Keenan",
+      "EventTotal": 52,
+      "StageTwoTotal": 434,
+      "Total": 1330
+    },
+    {
+      "Rank": 2,
       "EntryName": "Upswitch",
       "TeamUrl": "https://draft.premierleague.com/entry/739865/event/28",
       "PlayerName": "Rishabh Jain",
       "EventTotal": 38,
       "StageTwoTotal": 409,
       "Total": 1322
-    },
-    {
-      "Rank": 2,
-      "EntryName": "Slot Machine",
-      "TeamUrl": "https://draft.premierleague.com/entry/718663/event/28",
-      "PlayerName": "Sam Keenan",
-      "EventTotal": 37,
-      "StageTwoTotal": 419,
-      "Total": 1315
     },
     {
       "Rank": 3,
@@ -41,18 +41,18 @@
       "EntryName": "Fool of a Shevski",
       "TeamUrl": "https://draft.premierleague.com/entry/737890/event/28",
       "PlayerName": "Féilim Ó Brádaigh",
-      "EventTotal": 53,
-      "StageTwoTotal": 471,
-      "Total": 1196
+      "EventTotal": 56,
+      "StageTwoTotal": 474,
+      "Total": 1199
     },
     {
       "Rank": 6,
       "EntryName": "Girl w/t Erl Earing",
       "TeamUrl": "https://draft.premierleague.com/entry/739863/event/28",
       "PlayerName": "Emma Rea",
-      "EventTotal": 38,
-      "StageTwoTotal": 440,
-      "Total": 1172
+      "EventTotal": 57,
+      "StageTwoTotal": 459,
+      "Total": 1191
     },
     {
       "Rank": 7,
@@ -68,9 +68,9 @@
       "EntryName": "Luke Shawarma",
       "TeamUrl": "https://draft.premierleague.com/entry/739993/event/28",
       "PlayerName": "Dualta Beatty",
-      "EventTotal": 17,
-      "StageTwoTotal": 361,
-      "Total": 1041
+      "EventTotal": 21,
+      "StageTwoTotal": 365,
+      "Total": 1045
     }
   ],
   "Event": 28
